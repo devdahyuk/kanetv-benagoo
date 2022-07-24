@@ -8,8 +8,8 @@ var player;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        height: '405',
-        width: '720',
+        height: '720',
+        width: '1280',
         videoId: 'tB0sBzM_15E',
         playerVars: {
             'autoplay': 1,
@@ -28,9 +28,6 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
     event.target.playVideo();
-    if (player.getPlayerState() != 1) {
-        event.target.mute();
-        event.target.playVideo();
-        event.target.setVolume(100);
+    event.target.setVolume(100);
     }
 }
