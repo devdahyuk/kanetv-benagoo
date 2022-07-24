@@ -29,5 +29,4 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
     event.target.playVideo();
     event.target.setVolume(100);
-    }
 }
