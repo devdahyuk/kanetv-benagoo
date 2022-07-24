@@ -7,26 +7,15 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '720',
-        width: '1280',
-        videoId: 'tB0sBzM_15E',
-        playerVars: {
-            'autoplay': 1,
-            'controls': 0,
-            'showinfo': 1,
-            'enablejsapi': 1,
-            'loop': 1,
-            'autohide': 1,
-            'playsinline': 1,
-        },
-        events: {
-            'onReady': onPlayerReady,
-        }
-    });
-}
-
-function onPlayerReady(event) {
-    event.target.playVideo();
-    event.target.setVolume(100);
+  var player;
+  player = new YT.Player('player', {
+    videoId: 'tB0sBzM_15E',
+    playerVars: { 'autoplay': 1, 'controls': 0 },
+    events: {
+      'onReady': onPlayerReady,
+      'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
+      'onStateChange': onPlayerStateChange,
+      'onError': onPlayerError
+    }
+  });
 }
