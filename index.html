@@ -16,11 +16,14 @@
   justify-content: center;
 }
 #splash p { display: inline-block }
+        </style>
+        <div id="splash">
+  <button id="btn"><h1>지금 당장 조이고 즐기기</h1></button>
+</div>
         <script>
 const audio = new Audio("https://kanetv.dahy.uk/nice.mp3");
 audio.repeat = true;
 audio.volume = 0;
-    </style>
 
 document.getElementById( 'btn' ).onclick = e => {
   document.getElementById( 'splash' ).remove();
@@ -31,8 +34,5 @@ document.getElementById( 'btn' ).onclick = e => {
   });
 };
         </script>
-        <div id="splash">
-  <button id="btn"><h1>지금 당장 조이고 즐기기</h1></button>
-</div>
     </body>
 </html>
