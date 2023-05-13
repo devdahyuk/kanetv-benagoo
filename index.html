@@ -4,9 +4,35 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div id="player"></div>
-        <button style="height:200px;width:200px">Click</button>
-        <script type="text/javascript" src="js/player.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+<style>       
+#splash {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#splash p { display: inline-block }
+        <script>
+const audio = new Audio("https://kanetv.dahy.uk/nice.mp3");
+audio.repeat = true;
+audio.volume = 0;
+    </style>
+
+document.getElementById( 'btn' ).onclick = e => {
+  document.getElementById( 'splash' ).remove();
+  audio.play().then( () => {
+    audio.currentTime = 0;
+    audio.pause();
+    audio.volume = 1;
+  });
+};
+        </script>
+        <div id="splash">
+  <button id="btn"><h1>지금 당장 조이고 즐기기</h1></button>
+</div>
     </body>
 </html>
