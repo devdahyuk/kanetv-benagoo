@@ -27,11 +27,7 @@ audio.volume = 0;
 
 document.getElementById( 'btn' ).onclick = e => {
   document.getElementById( 'splash' ).remove();
-  audio.play().then( () => {
-    audio.currentTime = 0;
-    audio.pause();
-    audio.volume = 1;
-  });
+  audio.play()
 };
         </script>
     </body>
